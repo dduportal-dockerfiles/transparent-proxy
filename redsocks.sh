@@ -7,7 +7,6 @@ proxy_port="${2}"
 no_proxy_pattern="${3:localhost}"
 redsocks_conf=/etc/redsocks/main.conf
 
-
 HTTP_PROXY="http://${proxy_ip}:${proxy_port}/"
 HTTPS_PROXY="${HTTP_PROXY}"
 FTP_PROXY="${HTTP_PROXY}"
@@ -17,7 +16,9 @@ https_proxy="${HTTP_PROXY}"
 ftp_proxy="${HTTP_PROXY}"
 no_proxy="${no_proxy_pattern}"
 
-export HTTP_PROXY HTTPS_PROXY FTP_PROXY NO_PROXY http_proxy https_proxy ftp_proxy no_proxy
+export HTTP_PROXY HTTPS_PROXY FTP_PROXY NO_PROXY
+export http_proxy https_proxy ftp_proxy no_proxy
+export proxy_ip proxy_port
 
 echo "== Generating redsocks configuration file ..."
 
